@@ -1,38 +1,45 @@
 This project is a Next.js starter kit, which includes all the base tooling needed for a React project using Next.js.
 
-Includes:
+Project Includes:
 
-- TypeScript configs
-- ESLint
-- Prettier auto-formatting
-- Automatic lint checks using lint-staged and Husky
-- Sentry error logging
-- Firebase Auth
-- Firebase Admin
+-   TypeScript configs
+-   ESLint
+-   Prettier auto-formatting
+-   Automatic lint checks using lint-staged and Husky
+-   Sentry error logging
+-   Firebase Auth
+-   Firebase Admin
 
-Steps used to provision this project:
+## Steps used to provision this project:
 
 1. `npx create-next-app@latest --typescript` to install the base Next.js project with TypeScript
 2. `npm run lint` runs ESLint for the first time and configures the "next/core-web-vitals" extension.
 3. `npm install --save-dev eslint-config-prettier` to configure ESLint ant Prettier to work together.
 4. Add "prettier" to the ESLint config.
-5. Install Husky and lint-staged with `npm install --save-dev husky lint-staged`
-6. Add script to `package.json` to install Husky: `"prepare": "husky install"`
-7. Add `.lintstagedrc.js` and copy and paste config from [this Next.js documentation](https://nextjs.org/docs/basic-features/eslint#lint-staged).
-8. Run script to install Husky: `npm run prepare`
-9. Add the following lint-staged config to `package.json`:
+5. Add a the `.prettierrc` config file with the following default configurations:
+
+```
+{
+  "printWidth": 120,
+  "tabWidth": 4
+}
+
+```
+
+6. Install Husky and lint-staged with `npm install --save-dev husky lint-staged`
+7. Add script to `package.json` to install Husky: `"prepare": "husky install"`
+8. Add `.lintstagedrc.js` and copy and paste config from [this Next.js documentation](https://nextjs.org/docs/basic-features/eslint#lint-staged).
+9. Run script to install Husky: `npm run prepare`
+10. Add the following lint-staged config to `package.json`:
 
 ```
 "lint-staged": {
         "*.{ts,js,tsx,jsx}": "eslint --cache --fix",
-        "*.{ts,js,tsx,jsx,css,md}": "prettier --write"
+        "*.{ts,js,tsx,jsx,css,md,json}": "prettier --write"
     }
 ```
 
-10. Add script to `package.json` to run lint-staged before commit: `"precommit": "lint-staged"`
-11. Add a precommit hook to run lint-staged on every git commit: `npx husky add .husky/pre-commit "npm run precommit"`
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+11. Add a precommit hook to run lint-staged on every git commit: `npx husky add .husky/pre-commit "npx lint-staged"`
 
 ## Getting Started
 
@@ -56,8 +63,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
