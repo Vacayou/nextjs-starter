@@ -40,10 +40,20 @@ Project Includes:
 ```
 
 11. Add a precommit hook to run lint-staged on every git commit: `npx husky add .husky/pre-commit "npx lint-staged"`
+12. Add Sentry package: `npm install --save @sentry/nextjs`
 
 ## Getting Started
 
-First, run the development server:
+### Add Sentry to New Project
+
+1. Go to https://sentry.io/organizations/vacayou/projects/new/ to add a new project
+2. Select Next.js as the platform
+3. Configure your desired settings, then click "Create Project"
+4. Run the "Sentry Wizard" command to setup the project: `npx @sentry/wizard -i nextjs`
+5. Follow the steps for the Sentry Wizard, and resolve any file merges that may come up.
+6. Wrap your API handlers with a withSentry function to capture Next.js API route errors. See the example in `/pages/api/hello.ts`
+
+### Run the Development Server
 
 ```bash
 npm run dev
@@ -59,7 +69,7 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -68,7 +78,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 

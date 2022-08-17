@@ -10,6 +10,7 @@
         "prepare": "husky install"
     },
     "dependencies": {
+        "@sentry/nextjs": "^7.11.0",
         "next": "12.2.5",
         "react": "18.2.0",
         "react-dom": "18.2.0"
@@ -27,6 +28,6 @@
     },
     "lint-staged": {
         "*.{ts,js,tsx,jsx}": "eslint --cache --fix",
-        "*.{ts,js,tsx,jsx,css,md}": "prettier --write"
+        "*.{ts,js,tsx,jsx,css,md,json}": "prettier --write"
     }
 }
