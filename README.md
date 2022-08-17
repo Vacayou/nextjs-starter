@@ -46,6 +46,7 @@ Project Includes:
 
 ### Add Sentry to New Project
 
+0. Install the project dependencies: `npm i`
 1. Go to https://sentry.io/organizations/vacayou/projects/new/ to add a new project
 2. Select Next.js as the platform
 3. Configure your desired settings, then click "Create Project"
