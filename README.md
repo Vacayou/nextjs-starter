@@ -7,8 +7,6 @@ Project Includes:
 -   Prettier auto-formatting
 -   Automatic lint checks using lint-staged and Husky
 -   Sentry error logging
--   Firebase Auth
--   Firebase Admin
 
 ## Steps used to provision this project:
 
